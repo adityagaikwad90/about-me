@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya's Memories</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
+        /* Existing Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -13,7 +15,7 @@
             background-color: #f0f4f8;
             color: #333;
         }
-
+    
         /* Header */
         header {
             background: linear-gradient(135deg, #ff6b6b, #f06595);
@@ -23,12 +25,12 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             position: relative;
         }
-
+    
         header h1 {
             margin: 0;
             font-size: 2em;
         }
-
+    
         /* Buttons */
         .buttons {
             position: absolute;
@@ -37,7 +39,7 @@
             display: flex;
             gap: 10px;
         }
-
+    
         .buttons a {
             padding: 8px 15px;
             background-color: #fff;
@@ -48,31 +50,31 @@
             transition: background 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
+    
         .buttons a:hover {
             background-color: #f06595;
             color: #fff;
         }
-
+    
         /* Gallery Section */
         .gallery {
             padding: 40px 20px;
             text-align: center;
         }
-
+    
         .gallery h2 {
             font-size: 2em;
             margin-bottom: 30px;
             color: #444;
         }
-
+    
         .gallery-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
-
+    
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -83,7 +85,7 @@
             flex: 1 1 calc(50% - 40px); /* Adjusted for better responsiveness */
             max-width: calc(50% - 40px);
         }
-
+    
         .gallery-item img {
             width: 100%;
             height: auto;
@@ -91,16 +93,16 @@
             border-radius: 10px;
             transition: transform 0.3s;
         }
-
+    
         .gallery-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
         }
-
+    
         .gallery-item:hover img {
             transform: scale(1.05);
         }
-
+    
         .gallery-item .caption {
             position: absolute;
             bottom: 0;
@@ -114,30 +116,30 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-
+    
         .gallery-item:hover .caption {
             opacity: 1;
         }
-
+    
         /* Timeline Section */
         .timeline {
             background-color: #fff;
             padding: 40px 20px;
         }
-
+    
         .timeline h2 {
             text-align: center;
             font-size: 2em;
             margin-bottom: 30px;
             color: #444;
         }
-
+    
         .timeline-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-
+    
         .timeline-item {
             display: flex;
             flex-direction: column; /* Stack content for better mobile view */
@@ -149,7 +151,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-
+    
         .timeline-item img {
             width: 100%;
             max-width: 150px;
@@ -158,22 +160,22 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
+    
         .timeline-item .description {
             flex: 1;
         }
-
+    
         .timeline-item .description h3 {
             margin: 0 0 10px 0;
             font-size: 1.5em;
             color: #333;
         }
-
+    
         .timeline-item .description p {
             margin: 0;
             color: #666;
         }
-
+    
         /* Lightbox styles */
         .lightbox {
             display: none;
@@ -189,24 +191,24 @@
             color: #fff;
             flex-direction: column;
         }
-
+    
         .lightbox img {
             max-width: 90%;
             max-height: 80%;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             border-radius: 10px;
         }
-
+    
         .lightbox .caption {
             margin-top: 10px;
             font-size: 1em;
             text-align: center;
         }
-
+    
         .lightbox:target {
             display: flex;
         }
-
+    
         .lightbox .close-btn {
             position: absolute;
             top: 20px;
@@ -215,7 +217,7 @@
             color: #fff;
             text-decoration: none;
         }
-
+    
         .lightbox .nav-btn {
             position: absolute;
             top: 50%;
@@ -229,15 +231,15 @@
             cursor: pointer;
             user-select: none;
         }
-
+    
         .lightbox .prev-btn {
             left: 20px;
         }
-
+    
         .lightbox .next-btn {
             right: 20px;
         }
-
+    
         /* Footer */
         footer {
             text-align: center;
@@ -246,11 +248,11 @@
             padding: 20px;
             margin-top: 40px;
         }
-
+    
         footer p {
             margin: 0;
         }
-
+    
         /* Responsive adjustments */
         @media (max-width: 1024px) {
             .buttons {
@@ -262,37 +264,37 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
-
+    
             header h1 {
                 font-size: 1.8em;
             }
         }
-
+    
         @media (max-width: 768px) {
             .gallery-item {
                 flex: 1 1 calc(100% - 40px);
                 max-width: calc(100% - 40px);
             }
-
+    
             .timeline-item {
                 flex-direction: column;
                 text-align: center;
             }
         }
-
+    
         @media (max-width: 480px) {
             header h1 {
                 font-size: 1.5em;
             }
-
+    
             .gallery-item {
                 max-width: 100%;
             }
-
+    
             .timeline-item img {
                 max-width: 120px;
             }
-
+    
             .buttons {
                 position: static;
                 flex-direction: column;
@@ -300,58 +302,63 @@
                 gap: 10px;
                 transform: none;
             }
-
+    
             .buttons a {
                 font-size: 0.9em;
                 padding: 8px 12px;
             }
         }
+    
+        /* Additional Styles */
         .introduction {
-    padding: 20px;
-    background-color: #f7f7f7;
-    text-align: center;
-    font-size: 1.2em;
-    color: #555;
-}
-.buttons a:hover {
-    background-color: #e63950;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.timeline-item:hover {
-    background-color: #f1f1f1;
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-.gallery-item, .timeline-item {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.gallery-item.visible, .timeline-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.social-media {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.social-media a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-.social-media a:hover {
-    color: #ff6b6b;
-}
-
-
+            padding: 20px;
+            background-color: #f7f7f7;
+            text-align: center;
+            font-size: 1.2em;
+            color: #555;
+        }
+    
+        .buttons a:hover {
+            background-color: #e63950;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+    
+        .timeline-item:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+    
+        .gallery-item, .timeline-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+    
+        .gallery-item.visible, .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+    
+        .social-media a {
+            font-size: 1.5em;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+    
+        .social-media a:hover {
+            color: #ff6b6b;
+        }
     </style>
+    
 </head>
 <body>
 
