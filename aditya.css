@@ -29,6 +29,8 @@ nav {
 .nav-links {
   list-style: none;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
@@ -47,6 +49,37 @@ nav {
   color: #ffcb77;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: -100%;
+    width: 200px;
+    background: #1e1e1e;
+    text-align: right;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links li {
+    margin: 10px 20px;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+}
+
 /* Header Section */
 header {
   height: 100vh;
@@ -57,7 +90,7 @@ header {
   flex-direction: column;
   text-align: center;
   color: white;
-  padding-top: 80px; /* Space for the fixed header */
+  padding-top: 80px;
 }
 
 .header-content {
@@ -161,15 +194,6 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-  }
-
   header h1 {
     font-size: 32px;
   }
